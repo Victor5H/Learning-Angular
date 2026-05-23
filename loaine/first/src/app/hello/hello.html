@@ -1,0 +1,9 @@
+<p>hello works!</p>
+<p>{{title}}</p> 
+<!-- interpolation -->
+<button (click)="onClick()">Toggle</button> <br>
+<button [disabled]="isDisabled">{{isDisabled ? 'Off' : 'On'}}</button>
+<h1>Coutner value : {{ counter() }} </h1>
+<button (click)="incCounter()">+</button>
+<button (click)="decCounter()">-</button>
+<button (click)="resetCounter()">Reset</button>
