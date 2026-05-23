@@ -1,4 +1,4 @@
-import { Component, signal,computed } from '@angular/core';
+import { Component, signal,computed, effect } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -10,7 +10,10 @@ export class Hello {
   protected title  = 'Welcome to app';
   protected isDisabled = false;
   protected counter = signal(0); // writable signals
-  protected doubleCounter = computed(()=>this.counter()*2) //compyted signals
+  protected doubleCounter = computed(()=>this.counter()*2) //computed signals
+  private readonlycounterLog = effect(()=>{ //effects
+    console.log("count changed: ", this.counter());
+  })
   protected onClick(): void{
     console.log('Button clicked');
     this.isDisabled = !this.isDisabled;
