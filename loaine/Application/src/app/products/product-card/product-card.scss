@@ -1,0 +1,9 @@
+.product-card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+mat-card-content {
+    flex: 1;
+}
+    
